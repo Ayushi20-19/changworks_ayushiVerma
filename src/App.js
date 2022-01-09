@@ -4,7 +4,7 @@ import "./App.css";
 
 //mapping the word from keyboard
 const keyMap = {
-  KEYWORD: "c h a n g w o r k",
+  KEYWORD: "c h a n g w o r k s",
 };
 
 //triggering the confite
@@ -23,7 +23,7 @@ function App() {
     <div className='App'>
       <HotKeys keyMap={keyMap} handlers={handlers}>
         <header className='App-header'>
-          Type "changwork" on your keyboard and see 🎊
+          Type "changworks" on your keyboard and see 🎊
         </header>
       </HotKeys>
     </div>
