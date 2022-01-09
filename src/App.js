@@ -1,23 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import { HotKeys } from "react-hotkeys";
+import confetti from "canvas-confetti";
+import "./App.css";
+
+//mapping the word from keyboard
+const keyMap = {
+  KEYWORD: "c h a n g w o r k",
+};
+
+//triggering the confite
+const handlers = {
+  KEYWORD() {
+    confetti({
+      particleCount: 500,
+      spread: 360,
+      origin: { x: 0.5 },
+    });
+  },
+};
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <HotKeys keyMap={keyMap} handlers={handlers}>
+        <header className='App-header'>
+          Type "changwork" on your keyboard and see 🎊
+        </header>
+      </HotKeys>
     </div>
   );
 }
